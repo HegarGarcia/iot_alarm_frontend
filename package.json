@@ -11,6 +11,11 @@
     "start": "next start",
     "lint": "eslint --fix --ext .js,.jsx ./components ./pages"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "dependencies": {
     "bootstrap-next": "^1.0.5",
     "next": "9.1.2",
@@ -27,6 +32,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": "^3.1.0",
     "prettier": "^1.19.1"
   }
 }

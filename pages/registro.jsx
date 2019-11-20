@@ -1,74 +1,76 @@
 import React from "react";
 import Head from "next/head";
-import Signin from "../pages/signin";
-import UserContext from "../components/UserContext";
 
 const Registro = () => (
-  <div className='inicio' id='inicio'>
+  <div className="inicio" id="inicio">
     <Head>
       <title>Home</title>
-      <link rel='icon' href='/favicon.ico' />
+      <link rel="icon" href="/favicon.ico" />
       <link
-        rel='stylesheet'
-        href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'></link>
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      />
     </Head>
 
-    <div className='container-all col-md-12' id='form'>
-      <div className='row'>
-        <div className='container-form shadow-lg p-3 rounded text-white '>
-          <img
-            src='/man-user.png'
-            className='imagen'
-            alt='Responsive image'></img>
+    <div className="container-all col-md-12" id="form">
+      <div className="row">
+        <div className="container-form shadow-lg p-3 rounded text-white ">
+          <img src="/man-user.png" className="imagen" alt="User" />
 
-          <h1 className='text-center'>Register </h1>
-          <form className=''>
-            <div className='form-group'>
-              <label forhtml=''>Username</label>
+          <h1 className="text-center">Register</h1>
+          <form className="">
+            <div className="form-group">
+              <label>Username</label>
               <input
-                className='formcontrol'
-                autoComplete='off'
-                type='text'
-                id='email'
-                placeholder='Username'></input>
+                className="formcontrol"
+                autoComplete="off"
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Username"
+              />
             </div>
 
-            <div className='form-group'>
-              <label forhtml=''> Email</label>
+            <div className="form-group">
+              <label>Email</label>
               <input
-                className='formcontrol'
-                type='email'
-                placeholder='xxxxxx@ejemplo.com'></input>
+                className="formcontrol"
+                type="email"
+                placeholder="xxxxxx@ejemplo.com"
+              />
             </div>
 
-            <div className='form-group'>
-              <label forhtml=''> Password</label>
+            <div className="form-group">
+              <label>Password</label>
               <input
-                className='formcontrol'
-                type='password'
-                placeholder='**********'></input>
+                className="formcontrol"
+                type="password"
+                placeholder="**********"
+              />
             </div>
 
-            <div className='form-group'>
-              <label forhtml=''>Key</label>
+            <div className="form-group">
+              <label>Key</label>
               <input
-                className='formcontrol'
-                type='number'
-                placeholder='45632'></input>
+                className="formcontrol"
+                type="number"
+                placeholder="45632"
+              />
             </div>
           </form>
 
           <input
-            type='submit'
-            className='btn btn-primary mb-5 d-flex justify-content-center'
-            value='SEND'></input>
+            type="submit"
+            className="btn btn-primary mb-5 d-flex justify-content-center"
+            value="SEND"
+          />
 
-          <span className='text-footer'>
-            <a href='/signin'>Login In</a>
+          <span className="text-footer">
+            <a href="/signin">Login In</a>
           </span>
         </div>
       </div>
-      <div className='piepagina'>
+      <div className="piepagina">
         <p>Universidad de colima</p>
       </div>
     </div>

@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "main": "signin.js",
+  "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",

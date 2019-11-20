@@ -3,11 +3,12 @@ import Head from 'next/head'
 import Registro from './registro';
 import Signin from '../pages/signin';
 import UserContext from '../components/UserContext'
+import Time from '../components/Time'
 
 const Index = () => (
     <div>
     <Head>
-        <title>Sensores</title>
+         <title>Sensores</title>
       <link rel='icon' href='/favicon.ico' />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></link>
     </Head>
@@ -23,22 +24,20 @@ const Index = () => (
             <table class="table" id="tblEncuestas">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Clave</th>
-                            <th>Nombre sensor</th>
+                            <th>Hora</th>
+                            <th>Estado</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <td>1</td>
-                        <td>456896</td>
-                        <td>Temperatura</td>
+                        <td>12:20:30</td>
+                        <td>Abierto</td>
                         <div className = "container">
-                        <td><button class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Editar"><span class="icon icon-pencil-1"></span> Editar</button></td>
-                        <td><button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><span class=" icon icon-trash"></span> Eliminar</button></td>
-                        <td><button class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><span class=" icon icon-trash"></span> Ver</button></td>
+                        <td><button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><span class=" icon icon-trash"></span> Cerrar</button></td>
+                        <td><button class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><span class=" icon icon-trash"></span>Abrir</button></td>
                         </div>
 
                     </tbody>
+                    
                 </table>
 
             </div>

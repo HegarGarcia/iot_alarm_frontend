@@ -19,6 +19,7 @@
   "dependencies": {
     "bootstrap-next": "^1.0.5",
     "next": "9.1.2",
+    "prop-types": "^15.7.2",
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "redux-react-session": "^2.6.0"

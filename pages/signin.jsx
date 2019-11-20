@@ -1,78 +1,76 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
-import Registro from "../pages/registro";
-import UserContext from "../components/UserContext";
-import Index from "../pages/index";
 
 const Signin = () => {
   // const { signIn } = useContext(UserContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [, setMessage] = useState("");
 
   const authenticate = e => {
     e.preventDefault();
-    if (username != "" || password != "") {
-      signIn(username, password);
+    if (username !== "" || password !== "") {
+      // signIn(username, password);
     } else {
       setMessage("Please enter your username and password");
     }
   };
 
   return (
-    <div className='inicio' id='inicio'>
+    <div className="inicio" id="inicio">
       <Head>
         <title>Home</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
         <link
-          rel='stylesheet'
-          href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'></link>
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
       </Head>
-      <div className='container-all col-md-12' id='form'>
-        <div className='row'>
-          <div className='container-form shadow-lg p-3 rounded text-white '>
-            <img
-              src='/man-user.png'
-              className='imagen'
-              alt='Responsive image'></img>
+      <div className="container-all col-md-12" id="form">
+        <div className="row">
+          <div className="container-form shadow-lg p-3 rounded text-white ">
+            <img src="/man-user.png" className="imagen" alt="User" />
 
-            <h1 className='text-center'>Login</h1>
-            <form className=''>
-              <div className='form-group'>
-                <label forhtml=''>Username</label>
+            <h1 className="text-center">Login</h1>
+            <form className="">
+              <div className="form-group">
+                <label forhtml="">Username</label>
                 <input
-                  className='formcontrol'
-                  autoComplete='off'
-                  type='text'
-                  id='email'
-                  placeholder='Username'
-                  onChange={e => setUsername(e.target.value)}></input>
+                  className="formcontrol"
+                  autoComplete="off"
+                  type="text"
+                  id="email"
+                  placeholder="Username"
+                  onChange={e => setUsername(e.target.value)}
+                />
               </div>
 
-              <div className='form-group'>
-                <label forhtml=''> Password</label>
+              <div className="form-group">
+                <label forhtml=""> Password</label>
                 <input
-                  className='formcontrol'
-                  type='password'
-                  id='password'
-                  placeholder='**********'
-                  onChange={e => setPassword(e.target.value)}></input>
+                  className="formcontrol"
+                  type="password"
+                  id="password"
+                  placeholder="**********"
+                  onChange={e => setPassword(e.target.value)}
+                />
               </div>
 
               <input
-                type='submit'
-                className='btn btn-primary mb-5 d-flex justify-content-center'
-                value='SIGN IN'
-                onClick={e => authenticate(e)}></input>
+                type="submit"
+                className="btn btn-primary mb-5 d-flex justify-content-center"
+                value="SIGN IN"
+                onClick={e => authenticate(e)}
+              />
             </form>
 
-            <span className='text-footer'>
+            <span className="text-footer">
               ¿Aún no te has registrado?
-              <a href='/registro'>Registrate</a>
+              <a href="/registro">Registrate</a>
             </span>
           </div>
         </div>
-        <div className='piepagina'>
+        <div className="piepagina">
           <p>Universidad de colima</p>
         </div>
       </div>

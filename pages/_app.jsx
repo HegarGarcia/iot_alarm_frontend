@@ -1,6 +1,6 @@
 import React from "react";
 import App from "next/app";
-import UserContext from "../components/UserContext";
+import UserContext from "../components/TokenContext";
 
 export default class MyApp extends App {
   render() {

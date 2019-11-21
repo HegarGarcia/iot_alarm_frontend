@@ -18,7 +18,9 @@
   },
   "dependencies": {
     "bootstrap-next": "^1.0.5",
+    "js-cookie": "^2.2.1",
     "next": "9.1.2",
+    "next-cookies": "^2.0.2",
     "prop-types": "^15.7.2",
     "react": "16.11.0",
     "react-dom": "16.11.0",

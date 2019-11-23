@@ -1,15 +1,15 @@
 import React from "react";
 import App from "next/app";
-import UserContext from "../components/TokenContext";
+import { AuthProvider } from "../context/auth";
 
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
 
     return (
-      <UserContext.Provider value={{}}>
+      <AuthProvider>
         <Component {...pageProps} />
-      </UserContext.Provider>
+      </AuthProvider>
     );
   }
 }

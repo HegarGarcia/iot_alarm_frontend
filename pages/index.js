@@ -31,13 +31,14 @@ const Index = () => (
                     <tbody>
                         <td>12:20:30</td>
                         <td>Abierto</td>
-                        <div className = "container">
-                        <td><button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><span class=" icon icon-trash"></span> Cerrar</button></td>
-                        <td><button class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><span class=" icon icon-trash"></span>Abrir</button></td>
-                        </div>
+
 
                     </tbody>
-                    
+                    <tbody>
+                        <td>12:20:30</td>
+                        <td>Abierto</td>
+
+                    </tbody>
                 </table>
 
             </div>

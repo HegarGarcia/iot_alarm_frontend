@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { withAuth } from "../hoc/withAuth";
 
 const Index = () => (
   <div>
@@ -34,10 +35,10 @@ const Index = () => (
                 </tr>
               </thead>
               <tbody>
-                <td>1</td>
-                <td>456896</td>
-                <td>Temperatura</td>
-                <div className="container">
+                <tr>
+                  <td>1</td>
+                  <td>456896</td>
+                  <td>Temperatura</td>
                   <td>
                     <button
                       type="button"
@@ -74,7 +75,7 @@ const Index = () => (
                       Ver
                     </button>
                   </td>
-                </div>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -84,4 +85,4 @@ const Index = () => (
   </div>
 );
 
-export default Index;
+export default withAuth(Index);

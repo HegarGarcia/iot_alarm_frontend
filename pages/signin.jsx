@@ -70,26 +70,25 @@ const Signin = () => {
             </span>
           </div>
         </div>
-        <div className="piepagina">
-          <p>Universidad de colima</p>
-        </div>
       </div>
 
       <style global jsx>
         {`
           @import url("https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap");
           .row {
-            max-width: 880px;
+            max-width: 100%;
+            min-width: 100%;
             margin: 80px auto 40px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             font-family: "Libre Franklin", sans-serif;
           }
+
           .imagen {
             width: 100px;
             heigth: 100px;
-            margin-left: 104px;
+            margin-left: 112px;
             padding: 0.25rem;
             /* background-color: #fff; */
             /* border: 1px solid #dee2e6; */
@@ -101,10 +100,18 @@ const Signin = () => {
             width: 411px;
           }
           .inicio {
-            background-image: url(/circuit-sensor-background-1.jpg);
-            backgroundcolor: black;
             margin-top: -84px;
+            background-size: cover;
+            background-repeat: no-repeat;
           }
+
+          body{
+            background-image: url(/circuit-sensor-background-1.jpg);
+          }
+
+
+
+
           .btn {
             width: 239px;
             height: 42px;
@@ -117,6 +124,9 @@ const Signin = () => {
             margin-bottom: 89px;
             width: 358px;
             background-color: #607d8b85;
+            height: 100%;
+            min-width: 100px;
+            
           }
           input {
             border-radius: 4.25rem;
@@ -124,7 +134,7 @@ const Signin = () => {
           .formcontrol {
             display: block;
             width: 100%;
-            height: calc(1.5em + 0.75rem + 2px);
+            height: 100%;
             padding: 0.375rem 0.75rem;
             font-size: 1rem;
             font-weight: 400;
@@ -148,3 +158,4 @@ const Signin = () => {
   );
 };
 export default Signin;
+

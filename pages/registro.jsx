@@ -101,10 +101,14 @@ const Registro = () => (
           width: 411px;
         }
         .inicio {
-          background-image: url(/circuit-sensor-background-1.jpg);
+          
           backgroundcolor: black;
           margin-top: -84px;
         }
+        body{
+          background-image: url(/circuit-sensor-background-1.jpg);
+        }
+
         .btn {
           width: 239px;
           height: 42px;

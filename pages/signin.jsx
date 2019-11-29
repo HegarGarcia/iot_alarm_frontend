@@ -1,19 +1,33 @@
-import React, { useState } from "react";
+import React, { useContext, useReducer } from "react";
 import Head from "next/head";
+import { AuthContext } from "../context/auth";
 
-const Signin = () => {
-  // const { signIn } = useContext(UserContext);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [, setMessage] = useState("");
+const SignInReducer = (state, action) => {
+  switch (action.type) {
+    case "field":
+      return { ...state, [action.field]: action.value };
+    default:
+      return state;
+  }
+};
 
-  const authenticate = e => {
-    e.preventDefault();
-    if (username !== "" || password !== "") {
-      // signIn(username, password);
-    } else {
-      setMessage("Please enter your username and password");
-    }
+const SignIn = () => {
+  const { signInWithEmailAndPassword } = useContext(AuthContext);
+  const [user, dispatch] = useReducer(SignInReducer, {
+    email: "",
+    password: ""
+  });
+
+  const updateField = ({ target }) =>
+    dispatch({
+      type: "field",
+      field: target.name,
+      value: target.type === "number" ? +target.value : target.value
+    });
+
+  const signIn = event => {
+    event.preventDefault();
+    signInWithEmailAndPassword(user.email, user.password);
   };
 
   return (
@@ -32,16 +46,17 @@ const Signin = () => {
             <img src="/man-user.png" className="imagen" alt="User" />
 
             <h1 className="text-center">Login</h1>
-            <form className="">
+            <form className="" onSubmit={signIn}>
               <div className="form-group">
                 <label forhtml="">Username</label>
                 <input
                   className="formcontrol"
                   autoComplete="off"
                   type="text"
-                  id="email"
+                  name="email"
                   placeholder="Username"
-                  onChange={e => setUsername(e.target.value)}
+                  value={user.email}
+                  onChange={updateField}
                 />
               </div>
 
@@ -51,8 +66,10 @@ const Signin = () => {
                   className="formcontrol"
                   type="password"
                   id="password"
+                  name="password"
                   placeholder="**********"
-                  onChange={e => setPassword(e.target.value)}
+                  value={user.password}
+                  onChange={updateField}
                 />
               </div>
 
@@ -60,7 +77,6 @@ const Signin = () => {
                 type="submit"
                 className="btn btn-primary mb-5 d-flex justify-content-center"
                 value="SIGN IN"
-                onClick={e => authenticate(e)}
               />
             </form>
 
@@ -147,4 +163,4 @@ const Signin = () => {
     </div>
   );
 };
-export default Signin;
+export default SignIn;

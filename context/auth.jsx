@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import Router from "next/router";
 import PropTypes from "prop-types";
 import cookie from "js-cookie";
@@ -15,9 +15,15 @@ export const AuthContext = createContext({
 export function AuthProvider({ children }) {
   const [token, setToken] = useState("");
 
-  const signInWithEmailAndPassword = () => {
-    cookie.set("token", token, { expires: 1 });
-    Router.push("/");
+  useEffect(() => {
+    if (token) {
+      cookie.set("token", token, { expires: 1 });
+      Router.push("/");
+    }
+  }, [token]);
+
+  const signInWithEmailAndPassword = (email, password) => {
+    setToken(`${email}${password}`);
   };
 
   const signInWithToken = storedToken => setToken(storedToken);

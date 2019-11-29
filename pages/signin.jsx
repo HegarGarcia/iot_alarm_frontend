@@ -105,12 +105,9 @@ const Signin = () => {
             background-repeat: no-repeat;
           }
 
-          body{
+          body {
             background-image: url(/circuit-sensor-background-1.jpg);
           }
-
-
-
 
           .btn {
             width: 239px;
@@ -126,7 +123,6 @@ const Signin = () => {
             background-color: #607d8b85;
             height: 100%;
             min-width: 100px;
-            
           }
           input {
             border-radius: 4.25rem;
@@ -158,4 +154,3 @@ const Signin = () => {
   );
 };
 export default Signin;
-

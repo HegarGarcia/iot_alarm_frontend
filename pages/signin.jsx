@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Head from "next/head";
+import { AuthContext } from "../context/auth";
 
 const Signin = () => {
-  // const { signIn } = useContext(UserContext);
-  const [username, setUsername] = useState("");
+  const { signInWithEmailAndPassword } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [, setMessage] = useState("");
+  const [message, setMessage] = useState("");
 
-  const authenticate = e => {
-    e.preventDefault();
-    if (username !== "" || password !== "") {
-      // signIn(username, password);
+  const authenticate = async () => {
+    if (email && password) {
+      await signInWithEmailAndPassword(email, password);
     } else {
       setMessage("Please enter your username and password");
     }
@@ -34,14 +34,14 @@ const Signin = () => {
             <h1 className="text-center">Login</h1>
             <form className="">
               <div className="form-group">
-                <label forhtml="">Username</label>
+                <label forhtml="">Email</label>
                 <input
                   className="formcontrol"
                   autoComplete="off"
                   type="text"
                   id="email"
-                  placeholder="Username"
-                  onChange={e => setUsername(e.target.value)}
+                  placeholder="Email"
+                  onChange={e => setEmail(e.target.value)}
                 />
               </div>
 
@@ -56,12 +56,15 @@ const Signin = () => {
                 />
               </div>
 
-              <input
-                type="submit"
+              <button
+                type="button"
                 className="btn btn-primary mb-5 d-flex justify-content-center"
-                value="SIGN IN"
-                onClick={e => authenticate(e)}
-              />
+                onClick={authenticate}
+              >
+                SIGN IN
+              </button>
+
+              {message}
             </form>
 
             <span className="text-footer">

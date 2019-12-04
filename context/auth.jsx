@@ -23,19 +23,25 @@ export function AuthProvider({ children }) {
   };
 
   const signInWithEmailAndPassword = async (email, password) => {
-    const response = await fetch("http://localhost:3000/api/auth/signin", {
-      method: "post",
-      body: JSON.stringify({ email, password })
-    });
+    const response = await fetch(
+      "https://iot-alarm-dev.herokuapp.com/api/auth/signin",
+      {
+        method: "post",
+        body: JSON.stringify({ email, password })
+      }
+    );
     const newToken = await response.json();
     signInWithToken(newToken);
   };
 
   const signUpWithEmailAndPassword = async (email, password) => {
-    const response = await fetch("http://localhost:3000/api/auth/signup", {
-      method: "post",
-      body: JSON.stringify({ email, password })
-    });
+    const response = await fetch(
+      "https://iot-alarm-dev.herokuapp.com/api/auth/signup",
+      {
+        method: "post",
+        body: JSON.stringify({ email, password })
+      }
+    );
     const newToken = await response.json();
     signInWithToken(newToken);
   };

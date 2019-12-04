@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import Router from "next/router";
 import PropTypes from "prop-types";
 import cookie from "js-cookie";
+import fetch from "isomorphic-fetch";
 
 export const AuthContext = createContext({
   token: "",
@@ -15,15 +16,28 @@ export const AuthContext = createContext({
 export function AuthProvider({ children }) {
   const [token, setToken] = useState("");
 
-  const signInWithEmailAndPassword = () => {
-    cookie.set("token", token, { expires: 1 });
+  const signInWithToken = storedToken => {
+    setToken(storedToken);
+    cookie.set("token", storedToken, { expires: 1 });
     Router.push("/");
   };
 
-  const signInWithToken = storedToken => setToken(storedToken);
+  const signInWithEmailAndPassword = async (email, password) => {
+    const response = await fetch("http://localhost:3000/api/auth/signin", {
+      method: "post",
+      body: JSON.stringify({ email, password })
+    });
+    const newToken = await response.json();
+    signInWithToken(newToken);
+  };
 
-  const signUpWithEmailAndPassword = (email, password) => {
-    setToken(`${email}${password}`);
+  const signUpWithEmailAndPassword = async (email, password) => {
+    const response = await fetch("http://localhost:3000/api/auth/signup", {
+      method: "post",
+      body: JSON.stringify({ email, password })
+    });
+    const newToken = await response.json();
+    signInWithToken(newToken);
   };
 
   const signOut = () => {

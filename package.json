@@ -20,7 +20,7 @@
     "bootstrap-next": "^1.0.5",
     "isomorphic-fetch": "^2.2.1",
     "js-cookie": "^2.2.1",
-    "next": "9.1.2",
+    "next": "11.1.0",
     "next-cookies": "^2.0.2",
     "prop-types": "^15.7.2",
     "react": "16.11.0",
